@@ -3,36 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>iPhone 5c</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<link rel="stylesheet" href="style.css?v=3">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-<header>
-  <div class="titlebar">
-    <h1>iPhone 5c</h1>
-    <button class="uploadButton" id="uploadButton" type="button">Upload</button>
-    <input id="photoInput" type="file" accept="image/*" multiple>
-  </div>
-  <div class="subbar">
-    <span id="uploadStatus">Photos</span>
-    <div id="modes"><button data-cols="6">Small</button><button data-cols="4" class="active">Medium</button><button data-cols="2">Large</button></div>
-  </div>
-</header>
-<main id="grid"></main>
-<div id="empty" class="hidden">No Photos</div>
+<header><div class="titlebar"><h1>iPhone 5c</h1><button class="uploadButton" id="uploadButton" type="button">Upload</button><input id="photoInput" type="file" accept="image/*" multiple></div><div class="subbar"><span id="uploadStatus">Photos</span><div id="modes"><button data-cols="6">Small</button><button data-cols="4" class="active">Medium</button><button data-cols="2">Large</button></div></div></header>
+<main id="grid"></main><div id="empty" class="hidden">No Photos</div>
 <div id="viewer" class="hidden"><button id="closeViewer">Done</button><img id="viewerImg" src="" alt=""></div>
-<div id="uploaderModal" class="hidden">
-  <div class="modalCard">
-    <h2>Photo Uploader</h2>
-    <p>One-time setup. Your GitHub token stays only on this device. Give it access to this repository's <b>Contents: Read and write</b>.</p>
-    <input id="tokenInput" type="password" autocomplete="off" placeholder="github_pat_…">
-    <button id="saveToken" type="button">Save & Test</button>
-    <button id="cancelUploader" class="secondary" type="button">Cancel</button>
-    <button id="clearToken" class="danger" type="button">Forget token</button>
-    <div id="tokenStatus"></div>
-  </div>
-</div>
+<div id="pinModal" class="hidden"><div class="modalCard"><h2>Upload Photos</h2><p>Enter the upload PIN.</p><input id="pinInput" inputmode="numeric" type="password" maxlength="4" placeholder="••••" autocomplete="off"><button id="pinButton" type="button">Continue</button><div id="pinStatus"></div></div></div>
+<div id="tokenModal" class="hidden"><div class="modalCard"><h2>Uploader Setup</h2><p>One-time setup. Paste your GitHub token. It stays on this device.</p><input id="tokenInput" type="password" autocomplete="off" placeholder="github_pat_…"><button id="saveToken" type="button">Save & Test</button><button id="cancelToken" class="secondary" type="button">Cancel</button><div id="tokenStatus"></div></div></div>
 <div class="uploaderLink"><button id="setupUploader" type="button">Uploader settings</button></div>
-<script src="app.js?v=3"></script>
-</body>
-</html>
+<script src="app.js?v=5"></script>
+</body></html>
