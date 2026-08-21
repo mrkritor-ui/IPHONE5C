@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>party cam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>party cam 📸</h1>
+    <div id="modes">
+      <button data-cols="6">tight</button>
+      <button data-cols="4" class="active">normal</button>
+      <button data-cols="2">wide</button>
+    </div>
+  </header>
+
+  <main id="grid"></main>
+
+  <div id="empty" class="hidden">no photos yet — drop some in /photos</div>
+
+  <div id="viewer" class="hidden">
+    <button id="closeViewer">✕</button>
+    <img id="viewerImg" src="" alt="">
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
