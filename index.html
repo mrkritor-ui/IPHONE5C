@@ -7,32 +7,22 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <div class="titlebar">
-      <h1>iPhone 5c</h1>
-      <label class="uploadButton" for="photoInput">Upload</label>
-      <input id="photoInput" type="file" accept="image/*" multiple>
-    </div>
-    <div class="subbar">
-      <span id="uploadStatus">Photos</span>
-      <div id="modes">
-        <button data-cols="6">Small</button>
-        <button data-cols="4" class="active">Medium</button>
-        <button data-cols="2">Large</button>
-      </div>
-    </div>
-  </header>
-
-  <main id="grid"></main>
-
-  <div id="empty" class="hidden">No Photos</div>
-
-  <div id="viewer" class="hidden">
-    <button id="closeViewer">Done</button>
-    <img id="viewerImg" src="" alt="">
+<header>
+  <div class="titlebar">
+    <h1>iPhone 5c</h1>
+    <label class="uploadButton" for="photoInput">Upload</label>
+    <input id="photoInput" type="file" accept="image/*" multiple>
   </div>
-
-  <script src="app.js"></script>
+  <div class="subbar">
+    <span id="uploadStatus">Photos</span>
+    <div id="modes"><button data-cols="6">Small</button><button data-cols="4" class="active">Medium</button><button data-cols="2">Large</button></div>
+  </div>
+</header>
+<main id="grid"></main>
+<div id="empty" class="hidden">No Photos</div>
+<div id="viewer" class="hidden"><button id="closeViewer">Done</button><img id="viewerImg" src="" alt=""></div>
+<div id="uploaderModal" class="hidden"><div class="modalCard"><h2>Uploader Setup</h2><p>Paste your GitHub fine-grained token once. It stays on this device and is used only for this photo uploader.</p><input id="tokenInput" type="password" autocomplete="off" placeholder="github_pat_…"><button id="saveToken">Save</button><button id="cancelUploader" class="secondary">Cancel</button><button id="clearToken" class="danger">Forget token</button></div></div>
+<div class="uploaderLink"><button id="setupUploader">Uploader settings</button></div>
+<script src="app.js"></script>
 </body>
 </html>
