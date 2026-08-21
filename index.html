@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>iPhone 5c</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header>
   <div class="titlebar">
     <h1>iPhone 5c</h1>
-    <label class="uploadButton" for="photoInput">Upload</label>
+    <button class="uploadButton" id="uploadButton" type="button">Upload</button>
     <input id="photoInput" type="file" accept="image/*" multiple>
   </div>
   <div class="subbar">
@@ -21,8 +21,18 @@
 <main id="grid"></main>
 <div id="empty" class="hidden">No Photos</div>
 <div id="viewer" class="hidden"><button id="closeViewer">Done</button><img id="viewerImg" src="" alt=""></div>
-<div id="uploaderModal" class="hidden"><div class="modalCard"><h2>Uploader Setup</h2><p>Paste your GitHub fine-grained token once. It stays on this device and is used only for this photo uploader.</p><input id="tokenInput" type="password" autocomplete="off" placeholder="github_pat_…"><button id="saveToken">Save</button><button id="cancelUploader" class="secondary">Cancel</button><button id="clearToken" class="danger">Forget token</button></div></div>
-<div class="uploaderLink"><button id="setupUploader">Uploader settings</button></div>
-<script src="app.js"></script>
+<div id="uploaderModal" class="hidden">
+  <div class="modalCard">
+    <h2>Photo Uploader</h2>
+    <p>One-time setup. Your GitHub token stays only on this device. Give it access to this repository's <b>Contents: Read and write</b>.</p>
+    <input id="tokenInput" type="password" autocomplete="off" placeholder="github_pat_…">
+    <button id="saveToken" type="button">Save & Test</button>
+    <button id="cancelUploader" class="secondary" type="button">Cancel</button>
+    <button id="clearToken" class="danger" type="button">Forget token</button>
+    <div id="tokenStatus"></div>
+  </div>
+</div>
+<div class="uploaderLink"><button id="setupUploader" type="button">Uploader settings</button></div>
+<script src="app.js?v=3"></script>
 </body>
 </html>
