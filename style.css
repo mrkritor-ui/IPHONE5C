@@ -1,19 +1,20 @@
 * { box-sizing: border-box; }
-html, body { margin:0; padding:0; background:#0a0a0a; color:#eee; font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif; overscroll-behavior:none; touch-action:pan-y; }
-header { position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:10px 14px; background:rgba(10,10,10,.88); backdrop-filter:blur(6px); border-bottom:1px solid #222; }
-h1 { font-size:16px; margin:0; font-weight:600; letter-spacing:.02em; }
-.actions { display:flex; align-items:center; gap:8px; min-width:0; }
-.uploadButton { background:#eee; color:#111; border-radius:999px; padding:7px 12px; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap; -webkit-tap-highlight-color:transparent; }
+html, body { margin:0; padding:0; background:#f7f7f7; color:#1c1c1e; font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:15px; overscroll-behavior:none; }
+body { -webkit-font-smoothing:antialiased; }
+header { position:sticky; top:0; z-index:5; background:rgba(250,250,250,.96); border-bottom:1px solid #c8c7cc; box-shadow:0 1px 2px rgba(0,0,0,.08); }
+.titlebar { height:44px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; }
+h1 { margin:0; font-size:17px; line-height:44px; font-weight:600; letter-spacing:-.25px; }
+.uploadButton { color:#007aff; font-size:16px; font-weight:400; cursor:pointer; -webkit-tap-highlight-color:transparent; }
 #photoInput { display:none; }
-#uploadStatus { color:#888; font-size:11px; max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-#modes { display:flex; gap:6px; margin-left:auto; }
-#modes button { background:#1c1c1c; color:#aaa; border:1px solid #2c2c2c; border-radius:999px; padding:6px 12px; font-size:12px; -webkit-tap-highlight-color:transparent; }
-#modes button.active { background:#eee; color:#111; border-color:#eee; }
-#grid { display:grid; grid-template-columns:repeat(var(--cols,4),1fr); gap:3px; padding:3px; touch-action:none; }
-#grid img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#151515; }
-#empty { text-align:center; padding:60px 20px; color:#666; font-size:14px; }
+.subbar { height:38px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; color:#8e8e93; font-size:12px; border-top:1px solid #e5e5e7; }
+#modes { display:flex; gap:14px; }
+#modes button { padding:0; border:0; background:transparent; color:#8e8e93; font:inherit; -webkit-tap-highlight-color:transparent; }
+#modes button.active { color:#007aff; }
+#grid { display:grid; grid-template-columns:repeat(var(--cols,4),1fr); gap:1px; padding:1px; background:#d1d1d6; touch-action:pan-y; }
+#grid img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#e5e5ea; }
+#empty { text-align:center; padding:80px 20px; color:#8e8e93; font-size:15px; }
 .hidden { display:none !important; }
 #viewer { position:fixed; inset:0; z-index:10; background:#000; display:flex; align-items:center; justify-content:center; touch-action:pan-y; }
 #viewer img { max-width:100%; max-height:100%; object-fit:contain; user-select:none; -webkit-user-drag:none; }
-#closeViewer { position:absolute; top:14px; right:14px; z-index:11; background:rgba(255,255,255,.1); color:#fff; border:none; border-radius:50%; width:36px; height:36px; font-size:16px; }
-@media (max-width:650px) { header { gap:8px; } h1 { width:100%; } #modes { margin-left:0; } #uploadStatus { max-width:150px; } }
+#closeViewer { position:absolute; top:max(10px,env(safe-area-inset-top)); right:14px; z-index:11; background:transparent; color:#007aff; border:0; font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif; font-size:16px; padding:8px; }
+@media (max-width:500px) { .titlebar { padding:0 12px; } .subbar { padding:0 12px; } }
