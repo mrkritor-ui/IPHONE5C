@@ -10,6 +10,11 @@
 
   <header>
     <h1>party cam 📸</h1>
+    <div class="actions">
+      <label class="uploadButton" for="photoInput">＋ upload photos</label>
+      <input id="photoInput" type="file" accept="image/*" multiple>
+      <span id="uploadStatus"></span>
+    </div>
     <div id="modes">
       <button data-cols="6">tight</button>
       <button data-cols="4" class="active">normal</button>
