@@ -1,0 +1,49 @@
+name: organise photos
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  organise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure photos folder exists
+        run: mkdir -p photos
+
+      - name: Move uploaded images into photos
+        shell: bash
+        run: |
+          shopt -s nullglob nocaseglob
+          for f in *.jpg *.jpeg *.png *.webp *.gif; do
+            [ -f "$f" ] || continue
+            mv "$f" "photos/$(basename "$f")"
+          done
+
+      - name: Generate photo manifest
+        shell: bash
+        run: |
+          cd photos
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          extensions = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
+          files = [p.name for p in Path('.').iterdir() if p.is_file() and p.suffix.lower() in extensions]
+          files.sort(key=lambda n: Path(n).stat().st_mtime, reverse=True)
+          Path('photos.json').write_text(json.dumps(files, ensure_ascii=False), encoding='utf-8')
+          PY
+
+      - name: Commit organised photos
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: organise uploaded photos"
+          file_pattern: "photos/*"
