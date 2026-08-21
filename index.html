@@ -2,32 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>party cam</title>
+<title>iPhone 5c</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>party cam 📸</h1>
-    <div class="actions">
-      <label class="uploadButton" for="photoInput">＋ upload photos</label>
+    <div class="titlebar">
+      <h1>iPhone 5c</h1>
+      <label class="uploadButton" for="photoInput">Upload</label>
       <input id="photoInput" type="file" accept="image/*" multiple>
-      <span id="uploadStatus"></span>
     </div>
-    <div id="modes">
-      <button data-cols="6">tight</button>
-      <button data-cols="4" class="active">normal</button>
-      <button data-cols="2">wide</button>
+    <div class="subbar">
+      <span id="uploadStatus">Photos</span>
+      <div id="modes">
+        <button data-cols="6">Small</button>
+        <button data-cols="4" class="active">Medium</button>
+        <button data-cols="2">Large</button>
+      </div>
     </div>
   </header>
 
   <main id="grid"></main>
 
-  <div id="empty" class="hidden">no photos yet — drop some in /photos</div>
+  <div id="empty" class="hidden">No Photos</div>
 
   <div id="viewer" class="hidden">
-    <button id="closeViewer">✕</button>
+    <button id="closeViewer">Done</button>
     <img id="viewerImg" src="" alt="">
   </div>
 
